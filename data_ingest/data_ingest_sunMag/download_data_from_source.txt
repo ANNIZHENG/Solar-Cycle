@@ -1,0 +1,2 @@
+webpage: http://wso.stanford.edu/#MeanField
+data is from 1992-2020

@@ -1,0 +1,9 @@
+cd Desktop
+
+zip -r sunMag.zip sunMag
+
+scp sunMag.zip az1932@peel.hpc.nyu.edu:/home/az1932
+
+ssh az1932@peel.hpc.nyu.edu
+
+unzip sunMag.zip
