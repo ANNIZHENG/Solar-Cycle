@@ -1,0 +1,2 @@
+webpage: https://www.ngdc.noaa.gov/stp/solar/corona.html
+data is from year 1992 to 2020
