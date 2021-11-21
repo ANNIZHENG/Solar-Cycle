@@ -1,0 +1,47 @@
+cd sunMag
+
+hdfs dfs -mkdir data
+
+hdfs dfs -put mf.1992.txt mf.1993.txt mf.1994.txt mf.1995.txt mf.1996.txt mf.1997.txt mf.1998.txt mf.1999.txt mf.2000.modif.txt mf.2001.modif.txt mf.2002.modif.txt mf.2003.txt mf.2004.txt mf.2005.txt mf.2006.txt mf.2007.txt mf.2008.txt mf.2009.txt mf.2010.txt mf.2011.txt mf.2012.txt mf.2013.txt mf.2014.txt mf.2015.txt mf.2016.txt mf.2017.txt mf.2018.txt mf.2019.txt mf.2020.txt data
+
+javac -classpath "$(yarn classpath)" -d . src/main/java/Clean.java
+
+jar -cvf clean.jar *.class
+
+hadoop jar clean.jar Clean data/mf.1992.txt cleaned_outputs/clean_1992
+hadoop jar clean.jar Clean data/mf.1993.txt cleaned_outputs/clean_1993
+hadoop jar clean.jar Clean data/mf.1994.txt cleaned_outputs/clean_1994
+hadoop jar clean.jar Clean data/mf.1995.txt cleaned_outputs/clean_1995
+hadoop jar clean.jar Clean data/mf.1996.txt cleaned_outputs/clean_1996
+hadoop jar clean.jar Clean data/mf.1997.txt cleaned_outputs/clean_1997
+hadoop jar clean.jar Clean data/mf.1998.txt cleaned_outputs/clean_1998
+hadoop jar clean.jar Clean data/mf.1999.txt cleaned_outputs/clean_1999
+hadoop jar clean.jar Clean data/mf.2000.modif.txt cleaned_outputs/clean_2000
+hadoop jar clean.jar Clean data/mf.2001.modif.txt cleaned_outputs/clean_2001
+hadoop jar clean.jar Clean data/mf.2002.modif.txt cleaned_outputs/clean_2002
+hadoop jar clean.jar Clean data/mf.2003.txt cleaned_outputs/clean_2003
+hadoop jar clean.jar Clean data/mf.2004.txt cleaned_outputs/clean_2004
+hadoop jar clean.jar Clean data/mf.2005.txt cleaned_outputs/clean_2005
+hadoop jar clean.jar Clean data/mf.2006.txt cleaned_outputs/clean_2006
+hadoop jar clean.jar Clean data/mf.2007.txt cleaned_outputs/clean_2007
+hadoop jar clean.jar Clean data/mf.2008.txt cleaned_outputs/clean_2008
+hadoop jar clean.jar Clean data/mf.2009.txt cleaned_outputs/clean_2009
+hadoop jar clean.jar Clean data/mf.2010.txt cleaned_outputs/clean_2010
+hadoop jar clean.jar Clean data/mf.2011.txt cleaned_outputs/clean_2011
+hadoop jar clean.jar Clean data/mf.2012.txt cleaned_outputs/clean_2012
+hadoop jar clean.jar Clean data/mf.2013.txt cleaned_outputs/clean_2013
+hadoop jar clean.jar Clean data/mf.2014.txt cleaned_outputs/clean_2014
+hadoop jar clean.jar Clean data/mf.2015.txt cleaned_outputs/clean_2015
+hadoop jar clean.jar Clean data/mf.2016.txt cleaned_outputs/clean_2016
+hadoop jar clean.jar Clean data/mf.2017.txt cleaned_outputs/clean_2017
+hadoop jar clean.jar Clean data/mf.2018.txt cleaned_outputs/clean_2018
+hadoop jar clean.jar Clean data/mf.2019.txt cleaned_outputs/clean_2019
+hadoop jar clean.jar Clean data/mf.2020.txt cleaned_outputs/clean_2020
+
+cd ..
+
+hdfs dfs -cat cleaned_outputs/clean_****/part-r-00000 > all_mag.txt
+
+hdfs dfs -mkdir all_mag
+
+hdfs dfs -put all_mag.txt all_mag
