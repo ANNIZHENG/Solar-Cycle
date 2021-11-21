@@ -1,0 +1,23 @@
+use az1932;
+
+CREATE EXTERNAL TABLE mag_data(year INT, month INT, day INT, mag_strength INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE LOCATION '/user/az1932/all_mag';
+
+CREATE TABLE cycle23 AS SELECT year,month,day,mag_strength FROM mag_data WHERE year < 2003;
+
+CREATE TABLE cycle24 AS SELECT year,month,mag_strength FROM mag_data WHERE year >= 2003 AND year < 2014;
+
+CREATE TABLE cycle25 AS SELECT year,month,day,mag_strength FROM mag_data WHERE year >= 2014;
+
+SELECT count(*) FROM mag_data;
+
+SELECT MAX(mag_strength) FROM cycle23;
+SELECT MIN(mag_strength) FROM cycle23;
+SELECT AVG(mag_strength) FROM cycle23;
+
+SELECT MAX(mag_strength) FROM cycle24;
+SELECT MIN(mag_strength) FROM cycle24;
+SELECT AVG(mag_strength) FROM cycle24;
+
+SELECT MAX(mag_strength) FROM cycle25;
+SELECT MIN(mag_strength) FROM cycle25;
+SELECT AVG(mag_strength) FROM cycle25;
