@@ -1,0 +1,30 @@
+beeline
+!connect jdbc:hive2://hm-1.hpc.nyu.edu:10000/
+use yw3743;
+create table number(year INT, month INT, day INT, number INT)
+row format delimited
+fields terminated by ','
+stored as textfile
+location '/user/yw3743/Final_Proj/Hive_Table/second_num';
+describe number;
+//After making the table we look at the day with the most number of sunspots.
+select * from number WHERE number IN(select Max(number) from number);
+//Then we choose to select mininum number to make sure the mininum is not below 
+select * from number WHERE number IN(select Min(number) from number);
+// Create a new column record each cycle of year
+alter table number add columns (cycle INT);
+//but it fails so I choose alternative way of creating sub tables for each cycle
+CREATE TABLE cycle1 AS SELECT * FROM number WHERE year < 2003;
+CREATE TABLE cycle2 AS SELECT * FROM number WHERE year >= 2003 and year < 2014;
+CREATE TABLE cycle3 AS SELECT * FROM number WHERE year >= 2014;
+//Get min, max and mean from these cycle.
+select * from cycle1 WHERE number IN(select Max(number) from number);
+select * from cycle2 WHERE number IN(select Max(number) from number);
+select * from cycle3 WHERE number IN(select Max(number) from number);
+select * from cycle1 WHERE number IN(select Min(number) from number);
+select * from cycle2 WHERE number IN(select Min(number) from number);
+select * from cycle3 WHERE number IN(select Min(number) from number);
+select year,AVG(number) from cycle1 group by year;
+select year,AVG(number) from cycle2 group by year;
+select year,AVG(number) from cycle3 group by year;
+
