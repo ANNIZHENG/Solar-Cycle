@@ -2,10 +2,10 @@
 
 Steps we took to analyze change in Sunspot Change from 1992 to 2020 (Yizhou Wan):
 
-1. Use code in etl_code/etl_sunSpot/MapReduce directory to normalize the raw file and retrieve only the number of sunspots of each day of the years.
+1. I used code in etl_code/etl_sunSpot/MapReduce directory to normalize the raw file and retrieve only the number of sunspots of each day of the years.
 2. Then I put it as a txt file and sent it to Final_Proj/Hive_Table/second_num as the final version for hive table (which was performed in NYU Peel).
 3. I ran the commands in profiling_code/profiling_sunSpot/hive_command_for_sunspots.txt, which would create a main table and three sub tables presenting each cycle.
-4. After creating the Hive table, we calculated the max, min and average number of sunspots for each cycle.
+4. After creating the Hive table, I calculated the max, min and average number of sunspots for each cycle.
 5. The results of these table commands can be found in the screenshots in ana_code/ana_sunSpot/analysis_using_hive directory
 
 
