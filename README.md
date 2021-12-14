@@ -13,7 +13,7 @@ Steps took to analyze change in Sunspot Change from 1992 to 2020 (Yizhou Wan):
 5. The results can be found in ana_code/ana_sunSpot/analysis_using_hive directory
 
 
-![Alt text](/image/sunspot.png | width = 200)
+<img src="image/sunspot.png" width="400" height=auto />
 
 
 Steps took to analyze change in Solar Magnetic Field Strength from 1992 to 2020 (Anni Zheng):
