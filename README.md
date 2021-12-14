@@ -13,7 +13,7 @@ Steps took to analyze change in Sunspot Change from 1992 to 2020 (Yizhou Wan):
 5. The results can be found in ana_code/ana_sunSpot/analysis_using_hive directory
 
 
-![Alt text](/image/sunspot.png?raw=true)
+![Alt text](/image/sunspot.png | width = 200)
 
 
 Steps took to analyze change in Solar Magnetic Field Strength from 1992 to 2020 (Anni Zheng):
@@ -26,7 +26,7 @@ Steps took to analyze change in Solar Magnetic Field Strength from 1992 to 2020 
 
 4. /ana_code/ana_sunMag/analysis_using_hive.pdf contains screenshots of the execution of analytical hive commands. It mainly displays the result of calculating the maximum, minimum, and average magnetic field strength of each 11-year solar cycle, which we may use to compare between different solar cycles
 
-![Alt text](/image/mag.png?raw=true)
+![Alt text](/image/mag.png)
 
 
 Steps took to analyze change in Sunspot Change from 1992 to 2020 (Yizhou Wan, Anni Zheng):
@@ -37,4 +37,4 @@ Steps took to analyze change in Sunspot Change from 1992 to 2020 (Yizhou Wan, An
 
 3. Finally, used codes in etl_code/etl_Luminosity/normalizeLuminosity to normalize the luminosity data into a specific form for data visualization
 
-![Alt text](/image/luminosity.png?raw=true)
+![Alt text](/image/luminosity.png)
