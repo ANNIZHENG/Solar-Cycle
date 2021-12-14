@@ -26,7 +26,7 @@ Steps took to analyze change in Solar Magnetic Field Strength from 1992 to 2020 
 
 4. /ana_code/ana_sunMag/analysis_using_hive.pdf contains screenshots of the execution of analytical hive commands. It mainly displays the result of calculating the maximum, minimum, and average magnetic field strength of each 11-year solar cycle, which we may use to compare between different solar cycles
 
-![Alt text](/image/mag.png)
+<img src="image/mag.png" width="400" height=auto />
 
 
 Steps took to analyze change in Sunspot Change from 1992 to 2020 (Yizhou Wan, Anni Zheng):
@@ -37,4 +37,4 @@ Steps took to analyze change in Sunspot Change from 1992 to 2020 (Yizhou Wan, An
 
 3. Finally, used codes in etl_code/etl_Luminosity/normalizeLuminosity to normalize the luminosity data into a specific form for data visualization
 
-![Alt text](/image/luminosity.png)
+<img src="image/luminosity.png" width="400" height=auto />
